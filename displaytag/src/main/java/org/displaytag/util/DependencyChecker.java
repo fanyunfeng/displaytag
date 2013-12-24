@@ -51,7 +51,7 @@ public final class DependencyChecker
         try
         {
             // Do they have commons lang ?
-            Class stringUtils = Class.forName("org.apache.commons.lang.StringUtils"); //$NON-NLS-1$
+            Class stringUtils = Class.forName("org.apache.commons.lang3.StringUtils"); //$NON-NLS-1$
             try
             {
                 // this method is new in commons-lang 2.1

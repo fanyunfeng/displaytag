@@ -2,8 +2,8 @@ package org.displaytag.test;
 
 import junit.framework.Assert;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 
 
 /**

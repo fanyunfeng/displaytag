@@ -4,7 +4,7 @@ import java.util.Locale;
 
 import javax.servlet.jsp.PageContext;
 
-import org.apache.commons.lang.time.FastDateFormat;
+import org.apache.commons.lang3.time.FastDateFormat;
 import org.displaytag.exception.DecoratorException;
 import org.displaytag.properties.MediaTypeEnum;
 

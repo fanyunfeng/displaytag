@@ -30,11 +30,11 @@ import javax.servlet.jsp.JspWriter;
 
 import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.collections.IteratorUtils;
-import org.apache.commons.lang.ObjectUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.math.LongRange;
-import org.apache.commons.lang.math.NumberUtils;
-import org.apache.commons.lang.math.Range;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.math.LongRange;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.apache.commons.lang3.math.Range;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.displaytag.Messages;
@@ -311,7 +311,7 @@ public class TableTag extends HtmlTableTag
 
     /**
      * Included row range. If no rows can be skipped the range is from 0 to Long.MAX_VALUE. Range check should be always
-     * done using containsLong(). This is an instance of org.apache.commons.lang.math.Range, but it's declared as Object
+     * done using containsLong(). This is an instance of org.apache.commons.lang3.math.Range, but it's declared as Object
      * to avoid runtime errors while Jasper tries to compile the page and commons lang 2.0 is not available. Commons
      * lang version will be checked in the doStartTag() method in order to provide a more user friendly message.
      */

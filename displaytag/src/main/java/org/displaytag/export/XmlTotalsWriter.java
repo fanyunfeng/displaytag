@@ -7,7 +7,7 @@ import org.displaytag.decorator.TableDecorator;
 import org.displaytag.util.HtmlAttributeMap;
 import org.displaytag.util.TagConstants;
 import org.displaytag.util.MultipleHtmlAttribute;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.*;
 import java.util.regex.Pattern;

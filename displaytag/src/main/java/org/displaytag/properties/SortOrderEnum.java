@@ -15,7 +15,7 @@ import java.io.Serializable;
 import java.util.Iterator;
 
 import org.apache.commons.collections.iterators.ArrayIterator;
-import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 
 /**

@@ -13,7 +13,7 @@ package org.displaytag.sample.decorators;
 
 import java.util.List;
 
-import org.apache.commons.lang.ObjectUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.displaytag.decorator.TableDecorator;
 import org.displaytag.sample.ReportableListObject;
 

@@ -15,8 +15,8 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.UnhandledException;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.UnhandledException;
 
 
 /**

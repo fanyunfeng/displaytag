@@ -14,8 +14,8 @@ package org.displaytag.pagination;
 import java.text.MessageFormat;
 import java.util.List;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.displaytag.properties.TableProperties;
 import org.displaytag.util.Href;
 
