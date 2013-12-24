@@ -15,7 +15,7 @@
   <description>Example webapp for the display tag library</description>
   <dependencies>
     <dependency>
-      <groupId>commons-lang</groupId>
+      <groupId>org.apache.commons</groupId>
       <artifactId>commons-lang</artifactId>
     </dependency>
     <dependency>
