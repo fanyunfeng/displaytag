@@ -118,9 +118,9 @@ public class DefaultHref implements Href
             String[] keyValue = StringUtils.split(paramTokenizer.nextToken(), '=');
 
             // encode name/value to prevent css
-            String escapedKey = StringEscapeUtils.escapeHtml(keyValue[0]);
+            String escapedKey = StringEscapeUtils.escapeHtml4(keyValue[0]);
             String escapedValue = keyValue.length > 1
-                ? StringEscapeUtils.escapeHtml(keyValue[1])
+                ? StringEscapeUtils.escapeHtml4(keyValue[1])
                 : TagConstants.EMPTY_STRING;
 
             if (!this.parameters.containsKey(escapedKey))
@@ -174,7 +174,7 @@ public class DefaultHref implements Href
     public void removeParameter(String name)
     {
         // warning, param names are escaped
-        this.parameters.remove(StringEscapeUtils.escapeHtml(name));
+        this.parameters.remove(StringEscapeUtils.escapeHtml4(name));
     }
 
     /**
@@ -232,7 +232,7 @@ public class DefaultHref implements Href
         while (mapIterator.hasNext())
         {
             Map.Entry entry = (Map.Entry) mapIterator.next();
-            String key = StringEscapeUtils.escapeHtml((String) entry.getKey());
+            String key = StringEscapeUtils.escapeHtml4((String) entry.getKey());
 
             // don't overwrite parameters
             if (!this.parameters.containsKey(key))
@@ -246,12 +246,12 @@ public class DefaultHref implements Href
                         String[] values = (String[]) value;
                         for (int i = 0; i < values.length; i++)
                         {
-                            values[i] = StringEscapeUtils.escapeHtml(values[i]);
+                            values[i] = StringEscapeUtils.escapeHtml4(values[i]);
                         }
                     }
                     else
                     {
-                        value = StringEscapeUtils.escapeHtml(value.toString());
+                        value = StringEscapeUtils.escapeHtml4(value.toString());
                     }
                 }
 
