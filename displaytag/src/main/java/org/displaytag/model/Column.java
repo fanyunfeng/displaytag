@@ -16,7 +16,6 @@ import java.net.URLEncoder;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.UnhandledException;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.displaytag.decorator.DisplaytagColumnDecorator;
@@ -276,7 +275,7 @@ public class Column
                 }
                 catch (UnsupportedEncodingException e)
                 {
-                    throw new UnhandledException(e);
+                    throw new RuntimeException(e);
                 }
             }
         }

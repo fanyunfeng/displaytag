@@ -20,7 +20,6 @@ import java.util.StringTokenizer;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringEscapeUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.UnhandledException;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
@@ -362,7 +361,7 @@ public class DefaultHref implements Href
         }
         catch (CloneNotSupportedException e)
         {
-            throw new UnhandledException(e);
+            throw new RuntimeException(e);
         }
 
         href.parameters = new HashMap<String, Object>(this.parameters);

@@ -8,7 +8,6 @@ import java.util.Set;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.UnhandledException;
 
 
 /**
@@ -219,7 +218,7 @@ public class PostHref implements Href
         }
         catch (UnsupportedEncodingException e)
         {
-            throw new UnhandledException(e);
+            throw new RuntimeException(e);
         }
     }
 
@@ -235,7 +234,7 @@ public class PostHref implements Href
         }
         catch (CloneNotSupportedException e)
         {
-            throw new UnhandledException(e);
+            throw new RuntimeException(e);
         }
         href.parent = (Href) parent.clone();
 

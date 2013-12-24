@@ -22,7 +22,6 @@ import javax.servlet.jsp.tagext.Tag;
 
 import org.apache.commons.lang3.ClassUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.UnhandledException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.displaytag.Messages;
@@ -621,7 +620,7 @@ public final class TableProperties implements Cloneable
         catch (CloneNotSupportedException e)
         {
             // should never happen
-            throw new UnhandledException(e);
+            throw new RuntimeException(e);
         }
         twin.properties = (Properties) this.properties.clone();
         return twin;

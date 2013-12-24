@@ -16,7 +16,6 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.UnhandledException;
 
 
 /**
@@ -130,7 +129,7 @@ public class MultipleHtmlAttribute implements Cloneable
         catch (CloneNotSupportedException e)
         {
             // should never happen
-            throw new UnhandledException(e);
+            throw new RuntimeException(e);
         }
 
         // copy attributes

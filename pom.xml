@@ -218,12 +218,12 @@
     <module>displaytag-portlet</module>
     <module>displaytag-examples</module>
   </modules>
-  <repositories>
+  <!--repositories>
     <repository>
       <id>displaytag</id>
       <url>http://displaytag.sourceforge.net/m2repo</url>
     </repository>
-  </repositories>
+  </repositories-->
   <reporting>
     <plugins>
       <plugin>

@@ -17,7 +17,6 @@ import java.beans.SimpleBeanInfo;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang3.UnhandledException;
 
 
 /**
@@ -60,7 +59,7 @@ public class CaptionTagBeanInfo extends SimpleBeanInfo
         }
         catch (IntrospectionException ex)
         {
-            throw new UnhandledException("You got an introspection exception - maybe defining a property that is not"
+            throw new RuntimeException("You got an introspection exception - maybe defining a property that is not"
                 + " defined in the CaptionTag?: "
                 + ex.getMessage(), ex);
         }

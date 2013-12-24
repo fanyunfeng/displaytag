@@ -22,7 +22,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.UnhandledException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.displaytag.Messages;
@@ -141,7 +140,7 @@ public class DefaultRequestHelper implements RequestHelper
                 }
                 catch (UnsupportedEncodingException e)
                 {
-                    throw new UnhandledException(e);
+                    throw new RuntimeException(e);
                 }
             }
             map.put(paramName, values);
