@@ -149,8 +149,7 @@ abstract class Decorator
         boolean hasGetter = searchGetterFor(propertyName);
 
         // save in cache
-        propertyMap.put(getClass().getName() + CLASS_PROPERTY_SEPARATOR + simpleProperty, BooleanUtils
-            .toBooleanObject(hasGetter));
+        propertyMap.put(getClass().getName() + CLASS_PROPERTY_SEPARATOR + simpleProperty, hasGetter);
 
         // and return
         return hasGetter;

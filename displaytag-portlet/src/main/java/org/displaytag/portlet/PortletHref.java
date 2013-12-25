@@ -29,9 +29,9 @@ import org.apache.commons.collections.functors.AnyPredicate;
 import org.apache.commons.collections.functors.InstanceofPredicate;
 import org.apache.commons.collections.functors.NullPredicate;
 import org.apache.commons.collections.map.PredicatedMap;
-import org.apache.commons.lang3..ObjectUtils;
-import org.apache.commons.lang3..builder.EqualsBuilder;
-import org.apache.commons.lang3..builder.HashCodeBuilder;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.displaytag.util.Href;
 
 

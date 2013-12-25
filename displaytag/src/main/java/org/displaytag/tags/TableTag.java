@@ -32,9 +32,9 @@ import org.apache.commons.beanutils.BeanUtils;
 import org.apache.commons.collections.IteratorUtils;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.LongRange;
+import org.apache.commons.lang3.Range;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.apache.commons.lang3.math.Range;
+import org.apache.commons.lang3.Range;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.displaytag.Messages;
@@ -315,7 +315,7 @@ public class TableTag extends HtmlTableTag
      * to avoid runtime errors while Jasper tries to compile the page and commons lang 2.0 is not available. Commons
      * lang version will be checked in the doStartTag() method in order to provide a more user friendly message.
      */
-    private Object filteredRows;
+    private Range<Long> filteredRows;
 
     /**
      * The paginated list containing the external pagination and sort parameters The presence of this paginated list is
@@ -1090,8 +1090,8 @@ public class TableTag extends HtmlTableTag
             || !this.properties.getExportFullList()) // or we are exporting a single page
             ))
         {
-            int start = 0;
-            int end = 0;
+            long start = 0;
+            long end = 0;
             if (this.offset > 0)
             {
                 start = this.offset;
@@ -1117,11 +1117,11 @@ public class TableTag extends HtmlTableTag
             }
 
             // rowNumber starts from 1
-            filteredRows = new LongRange(start + 1, end);
+            filteredRows = Range.between(start + 1L, end);
         }
         else
         {
-            filteredRows = new LongRange(1, Long.MAX_VALUE);
+            filteredRows = Range.between(1L, Long.MAX_VALUE);
         }
     }
 
@@ -1133,7 +1133,7 @@ public class TableTag extends HtmlTableTag
      */
     protected boolean isIncludedRow()
     {
-        return ((Range) filteredRows).containsLong(this.rowNumber);
+        return filteredRows.contains((long)this.rowNumber);
     }
 
     /**
