@@ -224,11 +224,18 @@ public final class HtmlTagUtil
                         {
                             entityChars++;
                         }
-                        if (entityChars > 5)
+                        if (entityChars > 10)
                         {
-                            // assume an unescaped & if entity doesn't close after max 5 chars
+                            // assume an unescaped & if entity doesn't close after max 10 chars
                             count += entityChars;
                             entityChars = 0;
+                            
+                            if (count >= maxLength)
+                            {
+                                buffer.setLength(maxLength);
+                                chopped = true;
+                                break;
+                            }
                         }
                     }
                 }

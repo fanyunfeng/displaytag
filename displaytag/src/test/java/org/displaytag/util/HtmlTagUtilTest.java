@@ -224,4 +224,11 @@ public class HtmlTagUtilTest extends TestCase
             true));
     }
 
+    /**
+     * Test for the abbreviateHtmlString() method.
+     */
+    public void testAbbreviateHtmlStringLongEntity()
+    {
+        Assert.assertEquals("&lowast;xx", HtmlTagUtil.abbreviateHtmlString("&lowast;xx", 5, false));
+    }
 }
