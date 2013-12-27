@@ -22,6 +22,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.displaytag.properties.TableProperties;
 import org.displaytag.tags.TableTag;
 import org.displaytag.tags.TableTagParameters;
 
@@ -41,7 +42,7 @@ public final class ExportDelegate
     private static Log log = LogFactory.getLog(ExportDelegate.class);
 
     /**
-     * Donìt instantiate.
+     * Donâ€˜t instantiate.
      */
     private ExportDelegate()
     {
@@ -125,28 +126,47 @@ public final class ExportDelegate
 
         response.setContentType(contentType);
 
+        outputContent(response,request,pageContent,characterEncoding);
+    }
+    
+    protected static void outputContent(HttpServletResponse response, ServletRequest request,
+            Object pageContent, String characterEncoding) throws IOException{
+        
+        OutputStream out = response.getOutputStream();
+        byte[] content;
+        
         if (pageContent instanceof String)
         {
             // text content
             if (characterEncoding != null)
             {
-                response.setContentLength(((String) pageContent).getBytes(characterEncoding).length);
+                int headerLenght = 0;
+                TableProperties properties = TableProperties.getInstance(null);
+                
+                if (properties.getExportUicodeWithBom()) {
+                    if (characterEncoding.equalsIgnoreCase("utf8") || characterEncoding.equalsIgnoreCase("utf-8")) {
+                        final byte[] bom = new byte[] { (byte) 0xEF, (byte) 0xBB, (byte) 0xBF };
+                        out.write(bom);
+                        headerLenght = bom.length;
+                    }
+                }
+                
+                content = ((String) pageContent).getBytes(characterEncoding);
+                response.setContentLength(content.length + headerLenght);
             }
             else
             {
-                response.setContentLength(((String) pageContent).getBytes().length);
+                content = ((String) pageContent).getBytes();
             }
 
-            PrintWriter out = response.getWriter();
-            out.write((String) pageContent);
+            out.write(content);
             out.flush();
         }
         else
         {
             // dealing with binary content
-            byte[] content = (byte[]) pageContent;
+            content = (byte[]) pageContent;
             response.setContentLength(content.length);
-            OutputStream out = response.getOutputStream();
             out.write(content);
             out.flush();
         }

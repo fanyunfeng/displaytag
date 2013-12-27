@@ -349,6 +349,10 @@ public final class TableProperties implements Cloneable
      */
     public static final String PROPERTY_DEFAULT_COMPARATOR = "comparator.default"; //$NON-NLS-1$
 
+    /**
+     * 
+     */
+    public static final String PROPERTY_BOOLEAN_EXPORT_UNICODE_WITH_BOM = "export.unicode.with.bom";
     // </JBN>
 
     /**
@@ -1173,6 +1177,10 @@ public final class TableProperties implements Cloneable
         {
             return getBooleanProperty(PROPERTY_BOOLEAN_PAGINATION_SKIP_PAGE_NUMBER_IN_SORT);
         }
+    }
+    
+    public boolean getExportUicodeWithBom(){
+        return getBooleanProperty(PROPERTY_BOOLEAN_EXPORT_UNICODE_WITH_BOM);
     }
 
     // </JBN>
